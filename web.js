@@ -14,7 +14,7 @@ app.get('/',
 								throw err;
 							}
 							console.log (data);
-			 				response.send(Buffer.tostring(data));
+			 				response.send(data);
 						}
 					);
 		}
