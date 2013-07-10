@@ -9,7 +9,11 @@ app.get('/',
 			fs.readFileSync ("index.html",
 					function (err, data)
 						{
-							if (err) throw err;
+							if (err) 
+							{	response.send ("Got an error.");
+								throw err;
+							}
+							console.log (data);
 			 				response.send(Buffer.tostring(data));
 						}
 					);
