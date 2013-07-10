@@ -6,17 +6,18 @@ var app = express.createServer(express.logger());
 app.get('/', 
 	function(request, response) 
 		{
-			fs.readFileSync ('index.html',
-					function (err, data)
-						{
-							if (err) 
-							{	response.send ("Got an error.");
-								throw err;
-							}
-							console.log (data);
-			 				response.send(data);
-						}
-					);
+			response.send( fs.readFileSync ('~/index.html', 'ascii'));
+
+//					function (err, data)
+//						{
+//							if (err) 
+//							{	response.send ("Got an error.");
+//								// throw err;
+//							}
+//							console.log (data);
+//			 				response.send(data);
+//						}
+//					);
 		}
 	);
 
